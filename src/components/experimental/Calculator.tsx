@@ -1,12 +1,14 @@
+type ValidOperations = 'add' | 'subtract' | 'multiply' | 'divide'
+
 type CalculatorProps = {
   a: number
   b: number
-  operation: 'add' | 'subtract' | 'multiply' | 'divide' | string
+  operation: string
 }
 
 export const Calculator = ({ a, b, operation }: CalculatorProps) => {
   const calculate = () => {
-    switch (operation) {
+    switch (operation as ValidOperations) {
       case 'add':
         return a + b
       case 'subtract':
